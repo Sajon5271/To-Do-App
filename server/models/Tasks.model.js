@@ -91,3 +91,16 @@ const removeMultipleTasks = async function (ids) {
     console.log(error);
   }
 };
+
+module.exports = {
+  createTask,
+  getAllTasks,
+  getTaskById,
+  getUpcomingTasks,
+  getPastTasks,
+  getCurrentTasks,
+  getDoneTasks,
+  setTaskDone,
+  removeTask,
+  removeMultipleTasks,
+};
