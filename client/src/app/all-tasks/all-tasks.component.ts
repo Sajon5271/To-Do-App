@@ -22,4 +22,14 @@ export class AllTasksComponent {
       this.allTasks = this.allTasks.filter((elem) => elem._id !== id);
     });
   }
+
+  markTaskDone(id: string | undefined) {
+    if (id === undefined) return;
+    this.taskService.setTaskDone(id).subscribe((res) => {
+      console.log(res);
+      this.allTasks.forEach((elem) => {
+        if (elem._id === id) elem.alreadyDone = true;
+      });
+    });
+  }
 }

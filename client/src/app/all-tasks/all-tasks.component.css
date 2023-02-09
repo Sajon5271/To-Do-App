@@ -41,6 +41,7 @@
   margin: 5px 0px;
   /* background-color: red; */
   border-radius: 0px 5px 5px 0px;
+  border-left: 1px solid black;
   background-color: rgb(218, 219, 219);
   transition: all 0.2s;
 }
@@ -52,5 +53,28 @@
 .deleteImage {
   height: 50px;
   width: 100px;
-  padding: 5px;
+  padding: 7px;
+}
+.markDoneButton {
+  border: 0px;
+  margin: 5px 0px;
+  /* background-color: red; */
+  border-radius: 0px;
+  border-left: 1px solid black;
+  background-color: rgb(218, 219, 219);
+  transition: all 0.2s;
+}
+.markDoneButton:hover {
+  background-color: rgb(19, 175, 27);
+  transition: all 0.2s;
+}
+
+.markDoneImage {
+  height: 50px;
+  width: 100px;
+  /* padding: 5px; */
+}
+
+.done {
+  background-color: greenyellow;
 }

@@ -1,10 +1,17 @@
 <div class="wrapper" [(ngModel)]="allTasks">
   <h1>All tasks</h1>
   <div class="task-wrapper" *ngFor="let task of allTasks">
-    <div class="task">
+    <div class="task" [class.done]="task.alreadyDone">
       <a routerLink="/task/{{ task._id }}">{{ task.taskTitle }}</a>
     </div>
-    <a class="deleteButton" (click)="deleteTask(task._id)">
+    <a class="markDoneButton" (click)="markTaskDone(task._id)" title="Done">
+      <img
+        class="markDoneImage"
+        src="assets/markDoneButton.svg"
+        alt="mark done"
+      />
+    </a>
+    <a class="deleteButton" (click)="deleteTask(task._id)" title="Delete">
       <img class="deleteImage" src="assets/deleteButton.svg" alt="delete" />
     </a>
   </div>
