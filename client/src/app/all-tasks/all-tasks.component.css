@@ -1,0 +1,56 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.task {
+  background-color: rgb(218, 219, 219);
+  width: 500px;
+  margin: 5px 0px;
+  border-radius: 5px 0px 0px 5px;
+  transition: all 0.2s;
+  display: flex;
+  align-content: center;
+}
+.task > a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  text-decoration: none;
+  color: #000;
+  font-size: large;
+}
+.task > a::before {
+  content: "• ";
+}
+
+.task:hover {
+  transition: all 0.2s;
+  background-color: rgb(178, 180, 182);
+}
+
+.task-wrapper {
+  display: flex;
+}
+
+.deleteButton {
+  border: 0px;
+  margin: 5px 0px;
+  /* background-color: red; */
+  border-radius: 0px 5px 5px 0px;
+  background-color: rgb(218, 219, 219);
+  transition: all 0.2s;
+}
+.deleteButton:hover {
+  background-color: rgb(209, 48, 19);
+  transition: all 0.2s;
+}
+
+.deleteImage {
+  height: 50px;
+  width: 100px;
+  padding: 5px;
+}

@@ -1,0 +1,11 @@
+<div class="wrapper" [(ngModel)]="allTasks">
+  <h1>All tasks</h1>
+  <div class="task-wrapper" *ngFor="let task of allTasks">
+    <div class="task">
+      <a routerLink="/task/{{ task._id }}">{{ task.taskTitle }}</a>
+    </div>
+    <a class="deleteButton" (click)="deleteTask(task._id)">
+      <img class="deleteImage" src="assets/deleteButton.svg" alt="delete" />
+    </a>
+  </div>
+</div>
