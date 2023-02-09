@@ -1,23 +1,29 @@
-<form [formGroup]="taskForm">
-  <label for="taskTitle">Task Title</label>
-  <input
-    type="text"
-    id="taskTitle"
-    placeholder="Task title here"
-    formControlName="taskTitle"
-  />
-  <label for="taskDescription">Task Description</label>
-  <input
-    type="text"
-    id="taskDescription"
-    placeholder="Task Description here"
-    formControlName="taskDescription"
-  />
-  <label for="startTime">Starting time for task</label>
-  <input type="date" formControlName="taskStartDate" />
-  <input type="time" id="startTime" formControlName="taskStartTime" />
-  <label for="endTime">Ending time for task</label>
-  <input type="date" formControlName="taskEndDate" />
-  <input type="time" id="endTime" formControlName="taskEndTime" />
-  <button type="submit" (click)="submitData()">Create Task</button>
-</form>
+<div class="container-form">
+  <form [formGroup]="taskForm" (ngSubmit)="submitData()">
+    <label for="taskTitle">Task Title</label>
+    <input
+      type="text"
+      id="taskTitle"
+      placeholder="Task title here"
+      formControlName="taskTitle"
+    />
+    <label for="taskDescription">Task Description</label>
+    <input
+      type="text"
+      id="taskDescription"
+      placeholder="Task Description here (Optional)"
+      formControlName="taskDescription"
+    />
+    <label for="startTime">Starting time for task</label>
+    <div class="time" id="startTime">
+      <input type="date" formControlName="taskStartDate" />
+      <input type="time" id="startTime" formControlName="taskStartTime" />
+    </div>
+    <label for="endTime">Ending time for task (Optional)</label>
+    <div class="time" id="endTime">
+      <input type="datetime-local" formControlName="taskEndTimeDate" />
+      <!-- <input type="time" id="endTime" formControlName="taskEndTime" /> -->
+    </div>
+    <button type="submit">Create Task</button>
+  </form>
+</div>

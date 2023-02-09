@@ -3,17 +3,15 @@ const cors = require('cors');
 const router = require('./router');
 const mongoose = require('mongoose');
 
-const databaseUrl = 'mongodb://localhost:27017/to-do-database';
+const databaseUrl = 'mongodb://127.0.0.1:27017/to-do-database';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
-app.use(
-  '/',
-  router
-)(async function bootstrap() {
+app.use('/', router);
+(async function bootstrap() {
   try {
     await mongoose.connect(databaseUrl);
     console.log('Database Connected');

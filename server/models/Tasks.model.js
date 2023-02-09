@@ -67,6 +67,7 @@ const setTaskDone = async function (id) {
     const currTask = await getTaskById(id);
     currTask.alreadyDone = true;
     currTask.save();
+    return currTask;
   } catch (error) {
     console.log(error);
   }

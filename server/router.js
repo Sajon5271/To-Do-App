@@ -13,4 +13,8 @@ router.put('/set-task-done/:id', TaskController.setTaskDone);
 router.delete('/task/:id', TaskController.removeTaskById);
 router.delete('/tasks', TaskController.removeMultipleTasks);
 
-router.module.exports = router;
+router.get('/*', (req, res) => {
+  res.status(404).send('Bad Request')
+})
+
+module.exports = router;

@@ -1,1 +1,5 @@
-<p>dashboard works!</p>
+<a routerLink="/create-task" class="create-button"><div>+ Create Task</div></a>
+<h1>Recent Tasks</h1>
+<div class="task" *ngFor="let task of recentTasks">
+  <a routerLink="/task/{{ task._id }}">{{ task.taskTitle }}</a>
+</div>

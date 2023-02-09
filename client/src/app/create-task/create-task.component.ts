@@ -3,6 +3,7 @@ import { Task } from '../Task.interface';
 import { FormBuilder, Validators } from '@angular/forms';
 import { formatDate } from '@angular/common';
 import { TasksService } from '../tasks.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-task',
@@ -20,12 +21,15 @@ export class CreateTaskComponent {
       Validators.required,
     ],
     taskStartTime: [this.getCurrentTime(), Validators.required],
-    taskEndDate: formatDate(Date.now(), 'yyyy-MM-dd', 'en'),
-    taskEndTime: this.getCurrentTime(),
+    taskEndTimeDate:
+      formatDate(new Date(Date.now()), 'yyyy-MM-dd', 'en') +
+      'T' +
+      this.getCurrentTime(),
   });
   constructor(
     private formBuilder: FormBuilder,
-    private taskService: TasksService
+    private taskService: TasksService,
+    private router: Router
   ) {}
 
   ngOnInit() {}
@@ -46,10 +50,9 @@ export class CreateTaskComponent {
           ' ' +
           this.taskForm.value.taskStartTime
       ),
-      taskEndTime: Date.parse(
-        this.taskForm.value.taskEndDate + ' ' + this.taskForm.value.taskEndTime
-      ),
+      taskEndTime: Date.parse(this.taskForm.value.taskEndTimeDate + ''),
     };
     this.taskService.createTask(newTask).subscribe((res) => console.log(res));
+    this.router.navigate(['']);
   }
 }
