@@ -1,0 +1,23 @@
+<form [formGroup]="taskForm">
+  <label for="taskTitle">Task Title</label>
+  <input
+    type="text"
+    id="taskTitle"
+    placeholder="Task title here"
+    formControlName="taskTitle"
+  />
+  <label for="taskDescription">Task Description</label>
+  <input
+    type="text"
+    id="taskDescription"
+    placeholder="Task Description here"
+    formControlName="taskDescription"
+  />
+  <label for="startTime">Starting time for task</label>
+  <input type="date" formControlName="taskStartDate" />
+  <input type="time" id="startTime" formControlName="taskStartTime" />
+  <label for="endTime">Ending time for task</label>
+  <input type="date" formControlName="taskEndDate" />
+  <input type="time" id="endTime" formControlName="taskEndTime" />
+  <button type="submit" (click)="submitData()">Create Task</button>
+</form>

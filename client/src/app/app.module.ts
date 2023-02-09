@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MainContainerComponent } from './main-container/main-container.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateTaskComponent } from './create-task/create-task.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,8 +16,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavBarComponent,
     MainContainerComponent,
     DashboardComponent,
+    CreateTaskComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

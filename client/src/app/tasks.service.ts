@@ -20,7 +20,7 @@ export class TasksService {
   }
 
   getTaskById(id: string): Observable<Task> {
-    return this.http.get<Task>(this.baseUrl + '/all-tasks/' + id);
+    return this.http.get<Task>(this.baseUrl + '/task/' + id);
   }
 
   deleteTaskById(id: string): Observable<Task> {
